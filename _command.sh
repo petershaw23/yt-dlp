@@ -24,10 +24,10 @@ sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata 
 sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive The8BitGuy.txt https://www.youtube.com/c/The8BitGuy/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
 
 #LastWeekTonight
-sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive LastWeekTonight.txt https://www.youtube.com/c/LastWeekTonight/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive LastWeekTonight.txt https://www.youtube.com/user/LastWeekTonight/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
 
 #This does not compute
-sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive ThisDoesNotCompute.txt https://www.youtube.com/c/ThisDoesNotCompute/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive ThisDoesNotCompute.txt https://www.youtube.com/c/ThisDoesNotCompute/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --reject-title 'Podcast' --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
 
 
 #This week in Retro
