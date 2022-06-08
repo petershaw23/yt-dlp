@@ -12,3 +12,30 @@ sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata 
 
 #RMC
 sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive RMC.txt https://www.youtube.com/c/RMCRetro/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
+
+
+#Kurzgesagt
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive kurzgesagt.txt https://www.youtube.com/c/kurzgesagtDE/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
+
+#Nostalgia Nerd
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive NostalgiaNerd.txt https://www.youtube.com/c/nostalgianerd/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
+
+#8BitGuy
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive The8BitGuy.txt https://www.youtube.com/c/The8BitGuy/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
+
+#LastWeekTonight
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive LastWeekTonight.txt https://www.youtube.com/c/LastWeekTonight/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
+
+#This does not compute
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive ThisDoesNotCompute.txt https://www.youtube.com/c/ThisDoesNotCompute/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
+
+
+#This week in Retro
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive ThisWeekInRetro.txt https://www.youtube.com/c/ThisWeekInRetro/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
+
+
+#VideoGameDunkey
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive videogamedunkey.txt https://www.youtube.com/c/VideoGameDunkey/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
+
+#Wrestling With Gaming
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive WrestlingWithGaming.txt https://www.youtube.com/c/WrestlingWithGaming/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --verbose --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
