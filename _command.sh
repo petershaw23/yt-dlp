@@ -1,5 +1,5 @@
 cd /media/pi/1.42.6-25556/yt-dlp/
-echo "beginning_________________________________________________________________________"
+echo "beginning______________________________________________________________________________"
 echo $(date -u)
 #LGR
 sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive LGR.txt https://www.youtube.com/c/Lazygamereviews/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --reject-title 'LGR Plays' --embed-subs --sub-langs en --remux-video mkv --playlist-reverse -q
@@ -42,6 +42,17 @@ sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata 
 
 #Wrestling With Gaming
 sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive WrestlingWithGaming.txt https://www.youtube.com/c/WrestlingWithGaming/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --embed-subs --sub-langs en --remux-video mkv --playlist-reverse -q
+
+#New Mind
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive NewMind.txt https://www.youtube.com/c/NewMind/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --embed-subs --sub-langs en --remux-video mkv --playlist-reverse -q
+
+#SNESdrunk
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive SNESdrunk.txt https://www.youtube.com/c/SNESdrunk/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --embed-subs --sub-langs en --remux-video mkv --playlist-reverse -q
+
+#Strafefox
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive strafefox.txt https://www.youtube.com/c/strafefox/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --embed-subs --sub-langs en --remux-video mkv --playlist-reverse -q
+
+
 echo $(pwd)
 echo $(date -u)
-echo "finished_________________________________________________________________________"
+echo "finished______________________________________________________________________________"
