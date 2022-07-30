@@ -16,7 +16,6 @@ sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata 
 #RMC
 sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive RMC.txt https://www.youtube.com/c/RMCRetro/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --embed-subs --sub-langs en --remux-video mkv --playlist-reverse -q
 
-
 #Kurzgesagt
 sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive kurzgesagt.txt https://www.youtube.com/c/kurzgesagtDE/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --embed-subs --sub-langs en --remux-video mkv --playlist-reverse -q
 
@@ -32,13 +31,11 @@ sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata 
 #This does not compute
 sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive ThisDoesNotCompute.txt https://www.youtube.com/c/ThisDoesNotCompute/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --embed-subs --sub-langs en --remux-video mkv --playlist-reverse -q
 
-
 #This week in Retro
 sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive ThisWeekInRetro.txt https://www.youtube.com/c/ThisWeekInRetro/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --embed-subs --sub-langs en --remux-video mkv --playlist-reverse -q
 
-
 #VideoGameDunkey
-sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive videogamedunkey.txt https://www.youtube.com/user/VideoGameDunkey/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --embed-subs --sub-langs en --remux-video mkv --playlist-reverse -q
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive videogamedunkey.txt https://www.youtube.com/user/VideoGameDunkey/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --embed-subs --sub-langs en --remux-video mkv --playlist-reverse
 
 #Wrestling With Gaming
 sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive WrestlingWithGaming.txt https://www.youtube.com/c/WrestlingWithGaming/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --embed-subs --sub-langs en --remux-video mkv --playlist-reverse -q
@@ -52,6 +49,8 @@ sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata 
 #Strafefox
 sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive strafefox.txt https://www.youtube.com/c/strafefox/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --embed-subs --sub-langs en --remux-video mkv --playlist-reverse -q
 
+#Posy
+sudo yt-dlp -S "+res:480,ext:mp4,vcodec:av1" --embed-thumbnail --embed-metadata --download-archive posy.txt https://www.youtube.com/c/PosyMusic/videos -o '%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s' --windows-filenames --trim-filenames 150 --embed-subs --sub-langs en --remux-video mkv --playlist-reverse -q
 
 echo $(pwd)
 echo $(date -u)
