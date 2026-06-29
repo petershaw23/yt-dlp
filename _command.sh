@@ -25,7 +25,6 @@ CHANNELS=(
     "The8BitGuy,https://www.youtube.com/c/The8BitGuy/videos"
     "LastWeekTonight,https://www.youtube.com/user/LastWeekTonight/videos"
     "ThisDoesNotCompute,https://www.youtube.com/c/ThisDoesNotCompute/videos"
-    "ThisWeekInRetro,https://www.youtube.com/c/ThisWeekInRetro/videos"
     "videogamedunkey,https://www.youtube.com/user/VideoGameDunkey/videos"
     "WrestlingWithGaming,https://www.youtube.com/c/WrestlingWithGaming/videos"
     "NewMind,https://www.youtube.com/c/NewMind/videos"
