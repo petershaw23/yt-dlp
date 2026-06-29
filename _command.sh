@@ -5,16 +5,17 @@ echo $(date -u)
 
 # ============================================================
 # KANALLISTE - hier neue Kanäle eintragen
-# Format: "ARCHIVNAME,URL" oder "ARCHIVNAME,URL,--reject-title 'TITEL'"
+# Format: "ARCHIVNAME,URL" oder "ARCHIVNAME,URL,REJECT-TITEL"
+# REJECT-TITEL: Pipe-getrennte Begriffe z.B. "Stormgate|Battle Aces"
 # ============================================================
 CHANNELS=(
     "DFretro,https://www.youtube.com/playlist?list=PLY9cZ8nX4xmlpd1RE8_toocbU9cND7U-A"
     "scienceelf,https://www.youtube.com/@TheScienceElf/videos"
     "AVGN,https://www.youtube.com/playlist?list=PL2B009153AC977F90"
-    "uthermal,https://www.youtube.com/@uthermal/videos,--reject-title 'Stormgate|Battle Aces|ZeroSpace'"
-    "uthermal2,https://www.youtube.com/@uthermal2/videos,--reject-title 'Stormgate|Battle Aces|ZeroSpace'"
-    "Ahoy,https://www.youtube.com/@XboxAhoy/videos,--reject-title 'Guide'"
-    "LGR,https://www.youtube.com/c/Lazygamereviews/videos,--reject-title 'LGR Plays'"
+    "uthermal,https://www.youtube.com/@uthermal/videos,Stormgate|Battle Aces|ZeroSpace|Warcraft|Campaign|AoE2|2v2"
+    "uthermal2,https://www.youtube.com/@uthermal2/videos,Stormgate|Battle Aces|ZeroSpace|Warcraft|Campaign|AoE2|2v2"
+    "Ahoy,https://www.youtube.com/@XboxAhoy/videos,Guide"
+    "LGR,https://www.youtube.com/c/Lazygamereviews/videos,LGR Plays"
     "LGRBlerbs,https://www.youtube.com/c/lgrblerbs/videos"
     "GamingHistorian,https://www.youtube.com/c/gaminghistorian/videos"
     "techmoan,https://www.youtube.com/c/Techmoan/videos"
@@ -53,30 +54,48 @@ OUTPUT='%(channel)s/%(upload_date>%Y-%m-%d ) s%(title)s.%(ext)s'
 for entry in "${CHANNELS[@]}"; do
     ARCHIVE=$(echo "$entry" | cut -d',' -f1)
     URL=$(echo "$entry"     | cut -d',' -f2)
-    EXTRA=$(echo "$entry"   | cut -d',' -f3-)
+    REJECT=$(echo "$entry"  | cut -d',' -f3-)
 
-    # Kein drittes Feld: EXTRA ist dann gleich ARCHIVE
-    [ "$EXTRA" = "$ARCHIVE" ] && EXTRA=""
+    [ "$REJECT" = "$ARCHIVE" ] && REJECT=""
 
     echo "$ARCHIVE"
 
-    $YT_DLP \
-        -S "+res:480,ext:mp4,vcodec:av1" \
-        --embed-thumbnail \
-        --convert-thumbnails jpg \
-        --embed-metadata \
-        --download-archive "${ARCHIVE}.txt" \
-        "$URL" \
-        -o "$OUTPUT" \
-        --windows-filenames \
-        --trim-filenames 150 \
-        --embed-subs \
-        --sub-langs en \
-        --remux-video mkv \
-        --playlist-reverse \
-        -q \
-        --js-runtimes "deno:${DENO}" \
-        $EXTRA
+    if [ -n "$REJECT" ]; then
+        $YT_DLP \
+            -S "+res:480,ext:mp4,vcodec:av1" \
+            --embed-thumbnail \
+            --convert-thumbnails jpg \
+            --embed-metadata \
+            --download-archive "${ARCHIVE}.txt" \
+            "$URL" \
+            -o "$OUTPUT" \
+            --windows-filenames \
+            --trim-filenames 150 \
+            --embed-subs \
+            --sub-langs en \
+            --remux-video mkv \
+            --playlist-reverse \
+            -q \
+            --js-runtimes "deno:${DENO}" \
+            --reject-title "$REJECT"
+    else
+        $YT_DLP \
+            -S "+res:480,ext:mp4,vcodec:av1" \
+            --embed-thumbnail \
+            --convert-thumbnails jpg \
+            --embed-metadata \
+            --download-archive "${ARCHIVE}.txt" \
+            "$URL" \
+            -o "$OUTPUT" \
+            --windows-filenames \
+            --trim-filenames 150 \
+            --embed-subs \
+            --sub-langs en \
+            --remux-video mkv \
+            --playlist-reverse \
+            -q \
+            --js-runtimes "deno:${DENO}"
+    fi
 done
 
 echo $(pwd)
